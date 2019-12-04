@@ -19,7 +19,7 @@ public class Swagger2 {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                //扫描basePackage包下面的“/rest/”路径下的内容作为接口文档构建的目标
+                //扫描basePackage包下面的“/”路径下的内容作为接口文档构建的目标
                 .apis(RequestHandlerSelectors.basePackage("com.lily.myblog"))
                 .paths(PathSelectors.regex("/.*"))
                 .build();
@@ -27,7 +27,7 @@ public class Swagger2 {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("springboot利用swagger构建api文档")
+                .title("springboot利用swagger2构建api文档")
                 .description("简单优雅的restful风格")
                 .termsOfServiceUrl("http://www.lily.com")
                 .version("1.0")
