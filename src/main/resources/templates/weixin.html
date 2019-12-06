@@ -28,21 +28,16 @@
                 </div>
             </div>
 
-            <!--设备信息-->
-            <!--<div class="ui attached segment">-->
-                <!--设备信息-->
-            <!--</div>-->
-
             <!--提交列表-->
             <div class="ui bottom attached segment center aligned">
                 <!--关键词-->
-                <div>
+                <div class="ui">
                     <div class="ui two column grid">
-                        <div class="seven wide column right aligned m-margin-tb">
+                        <div class="five wide column right aligned m-margin-tb">
                             <div class="ui attached">关键词<a class="ui" style="color: red;">*</a></div>
                         </div>
-                        <div class="nine wide column left aligned">
-                            <div class="ui input"><input type="text"></div>
+                        <div class="eleven wide column left aligned m-padded-lr-tiny">
+                            <div class="ui input focus"><input type="text" id="keyWord" placeholder="请输入关键词" style="width: 300px;"></div>
                         </div>
                     </div>
                 </div>
@@ -52,13 +47,13 @@
                     <!--百度搜索-->
                     <div class="ui segment">
                         <div class="ui two column grid">
-                            <div class="seven wide column right aligned m-margin-tb ">
-                                <div class="ui attached"><a href="https://www.baidu.com/" target="_blank">百度搜索</a></div>
+                            <div class="five wide column right aligned m-margin-tb ">
+                                <div class="ui attached"><a href="#" onclick="jump()" id="baiduSearch" title="点击这里" target="_blank">百度搜索</a></div>
                             </div>
-                            <div class="nine wide column left aligned">
+                            <div class="eleven wide column left aligned">
                                 <div class="ui selection">
-                                    <select class="ui dropdown rounded" style="font-size: 12px; width: 180px;">
-                                        <option>--请选择--</option>
+                                    <select class="ui dropdown rounded" style="width: 300px;">
+                                        <option>--评分--</option>
                                         <option>3分-结果整体都很好</option>
                                         <option>2分-部分质量很好，其他一般</option>
                                         <option>1分-大多质量不好</option>
@@ -70,12 +65,12 @@
 
                         <div>
                             <div class="ui two column grid">
-                                <div class="seven wide column right aligned m-margin-tb ">
+                                <div class="five wide column right aligned m-margin-tb ">
                                     <div class="ui attached">评价</div>
                                 </div>
-                                <div class="nine wide column left aligned">
+                                <div class="eleven wide column left aligned">
                                     <div class="field m-mobile-wide">
-                                        <textarea name="content" placeholder="请输入评论。。。"></textarea>
+                                        <textarea rows="10" cols="39" id="comment" name="content" placeholder="#"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -83,13 +78,17 @@
 
                         <div>
                             <div class="ui two column grid">
-                                <div class="seven wide column right aligned ">
+                                <div class="five wide column right aligned m-margin-tb">
                                     <div class="ui attached">上传文件</div>
                                 </div>
-                                <div class="nine wide column left aligned">
-                                    <div class="ui upload image">
-                                        <input type="file">
-                                    </div>
+                                <div class="eleven wide column left aligned">
+                                    <!--<div class="ui upload image">-->
+                                        <!--<input type="file">-->
+                                    <!--</div>-->
+                                    <span class="ui left action input-file" onchange="upload()">
+                                        <button class="ui button">上传文件</button>
+                                        <input class="ui" type="file"  value="未选择任何文件">未选择任何文件
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -98,13 +97,17 @@
                     <!--搜狗搜索-->
                     <div class="ui segment attached">
                         <div class="ui two column grid">
-                            <div class="seven wide column right aligned m-margin-tb ">
-                                <div class="ui attached"><a href="https://www.sogou.com/" target="_blank">搜狗搜索</a></div>
+                            <div class="five wide column right aligned m-margin-tb ">
+                                <div class="ui attached"><a id="sougouSearch" href="#" onclick="jump1()" target="_blank" title="点击这里">搜狗搜索</a></div>
                             </div>
-                            <div class="nine wide column left aligned">
+                            <div class="eleven wide column left aligned">
                                 <div class="ui selection">
-                                    <select class="ui dropdown rounded" style="font-size: 12px; width: 180px;">
-                                        <option>--请选择--</option>
+                                    <select class="ui dropdown rounded" style="width: 300px;">
+                                        <option>--评分--</option>
+                                        <option>3分-结果整体都很好</option>
+                                        <option>2分-部分质量很好，其他一般</option>
+                                        <option>1分-大多质量不好</option>
+                                        <option>0分-都很差</option>
                                     </select>
                                 </div>
                             </div>
@@ -112,12 +115,12 @@
 
                         <div>
                             <div class="ui two column grid">
-                                <div class="seven wide column right aligned m-margin-tb ">
+                                <div class="five wide column right aligned m-margin-tb ">
                                     <div class="ui attached">评价</div>
                                 </div>
-                                <div class="nine wide column left aligned">
+                                <div class="eleven wide column left aligned">
                                     <div class="field m-mobile-wide">
-                                        <textarea name="content" placeholder="请输入评论。。。"></textarea>
+                                        <textarea rows="10" cols="39" id="comment1" name="content" placeholder="请输入评论。。。"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -125,11 +128,15 @@
 
                         <div>
                             <div class="ui two column grid">
-                                <div class="seven wide column right aligned">
+                                <div class="five wide column right aligned m-margin-tb">
                                     <div class="ui attached">上传文件</div>
+
                                 </div>
-                                <div class="nine wide column left aligned">
-                                    <div class="ui upload image"><input type="file"></div>
+                                <div class="eleven wide column left aligned">
+                                    <span class="ui left action input-file" onchange="upload()">
+                                        <button class="ui button">上传文件</button>
+                                        <input class="ui" type="file"  value="未选择任何文件">未选择任何文件
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -138,13 +145,17 @@
                     <!--微信搜一搜-->
                     <div class="ui segment attached">
                         <div class="ui two column grid">
-                            <div class="seven wide column right aligned m-margin-tb ">
-                                <div class="ui attached"><a href="#">微信搜一搜</a></div>
+                            <div class="five wide column right aligned m-margin-tb ">
+                                <div class="ui attached">微信搜一搜</div>
                             </div>
-                            <div class="nine wide column left aligned">
+                            <div class="eleven wide column left aligned">
                                 <div class="ui selection">
-                                    <select class="ui dropdown rounded" style="font-size: 12px; width: 180px;">
-                                        <option>--请选择--</option>
+                                    <select class="ui dropdown rounded" style=" width: 300px;">
+                                        <option>--评分--</option>
+                                        <option>3分-结果整体都很好</option>
+                                        <option>2分-部分质量很好，其他一般</option>
+                                        <option>1分-大多质量不好</option>
+                                        <option>0分-都很差</option>
                                     </select>
                                 </div>
                             </div>
@@ -152,24 +163,29 @@
 
                         <div>
                             <div class="ui two column grid">
-                                <div class="seven wide column right aligned m-margin-tb ">
+                                <div class="five wide column right aligned m-margin-tb ">
                                     <div class="ui attached">评价</div>
                                 </div>
-                                <div class="nine wide column left aligned">
+                                <div class="eleven wide column left aligned">
                                     <div class="field m-mobile-wide">
-                                        <textarea name="content" placeholder="请输入评论。。。"></textarea>
+                                        <textarea rows="10" cols="39" id="comment2" name="content" placeholder="请输入评论。。。"></textarea>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div>
+                        <div class="ui">
                             <div class="ui two column grid">
-                                <div class="seven wide column right aligned">
+                                <div class="five wide column right aligned m-margin-tb">
                                     <div class="ui attached">上传文件</div>
+
                                 </div>
-                                <div class="nine wide column left aligned">
-                                    <div class="ui upload image"><input type="file"></div>
+                                <div class="eleven wide column left aligned">
+                                    <span class="ui left action input-file" id="span1" onchange="upload()">
+                                        <button class="ui button">上传文件</button>
+                                        <input class="ui" type="file" id="uploadFile">
+                                        未选择任何文件
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -178,15 +194,13 @@
                 </div>
 
                 <div>
-                    <button class="ui button btn-primary m-padded-lr">
+                    <button class="ui primary button m-padded-lr">
                         保存
                     </button>
                     <button class="ui button m-padded-lr">
                         取消
                     </button>
                 </div>
-
-
             </div>
         </div>
     </div>
@@ -205,6 +219,34 @@
             position:'bottom center'
         }
     )
+
+    function jump() {
+        var h = document.getElementById("keyWord");
+        var hr = "https://www.baidu.com/s?wd="+encodeURI(h.value);
+        document.getElementById('baiduSearch').setAttribute("href", hr);
+    }
+
+    function jump1() {
+        var h = document.getElementById('keyWord');
+        var hr = "https://www.sogou.com/web?query="+encodeURI(h.value);
+        document.getElementById('sougouSearch').setAttribute("href", hr);
+    }
+
+    var file = document.getElementById("uploadFile").files;
+    var span1 = document.getElementById("id");
+
+    function upload() {
+        // var  file = $("#uploadFile").val();
+        // var fileName = getFileName(file);
+
+        span1.value = file.value;
+    }
+
+
+    var comments = "请简要说明原因。\n 示例：综合来说，搜索结果跟搜索词相关可用，其中第一条是官方网站，其余两条都是相关性强、来源权威且时效性好，最后一条是完全不相关的内容（ps：不用跟这个句式结构一模一样，简明的说清楚你的打分依据即可）";
+    document.getElementById("comment").setAttribute("placeholder", comments);
+    document.getElementById("comment1").setAttribute("placeholder", comments);
+    document.getElementById("comment2").setAttribute("placeholder", comments);
 </script>
 </body>
 </html>
