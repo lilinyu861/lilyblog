@@ -37,7 +37,7 @@
     </nav>
 
     <!--中间内容-->
-    <div class="m-padded-tb-large m-container m-padded-tb-big animated fadeIn">
+    <div id="waypoint" class="m-padded-tb-large m-container m-padded-tb-big animated fadeIn">
         <div class="ui m-container-small">
             <!--header-->
             <div class="ui top attached segment">
@@ -224,7 +224,7 @@
     </div>
 
 
-    <div class="m-padded m-fixed m-right-bottom">
+    <div id="toolbar" class="m-padded m-fixed m-right-bottom" style="display: none;">
         <div class="ui vertical icon buttons">
             <button type="button" class="ui toc teal button">目录</button>
             <div id="comment-button" class="ui teal button">留言</div>
@@ -292,11 +292,14 @@
     <script src="../static/lib/prism/prism.js"></script>
     <script src="../static/lib/tocbot/tocbot.min.js"></script>
     <script src="../static/lib/qrcode/qrcode.min.js"></script>
+    <script src="../static/lib/waypoints/jquery.waypoints.min.js"></script>
 <script>
+
     $('.menu.toggle').click(function () {
         $(".m-item").toggleClass('m-mobile-hide');
     });
 
+    //支付二维码
     $('#payButton').popup(
         {
             popup:$('.payQR.popup'),
@@ -305,6 +308,7 @@
         }
     );
 
+    //显示生成目录
     $('.toc.button').popup(
         {
             popup:$('.toc-container.popup'),
@@ -312,6 +316,8 @@
             position:'left center'
         }
     );
+
+    //生成目录
     tocbot.init({
         // Where to render the table of contents.
         tocSelector: '.js-toc',
@@ -323,6 +329,7 @@
         hasInnerContainers: true
     });
 
+    //显示二维码
     $('#myQR').popup(
         {
             popup:$('.myQR.popup'),
@@ -330,7 +337,7 @@
             position:'left center'
         }
     );
-
+    //生成二维码
     var qrcode = new QRCode("qrcode", {
         text: "http://jindo.dev.naver.com/collie",
         width: 100,
@@ -340,6 +347,7 @@
         correctLevel : QRCode.CorrectLevel.H
     });
 
+    //平滑滚动
     $('#toTop-button').click(function(){
         $(window).scrollTo(0,360);
     });
@@ -347,6 +355,19 @@
     $('#comment-button').click(function(){
         $(window).scrollTo('#comment-container',360);
     });
+
+    //滚动监测
+    var waypoint = new Waypoint({
+        element: document.getElementById('waypoint'),
+        handler: function(direction) {
+            if(direction == 'down'){
+                $('#toolbar').show();
+            }else {
+                $('#toolbar').hide();
+            }
+            console.log('Scrolled to waypoint!'+direction);
+        }
+    })
 
 </script>
 </body>
