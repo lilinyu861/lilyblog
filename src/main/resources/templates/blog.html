@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../static/css/typo.css">
     <link rel="stylesheet" href="../static/css/animate.css">
     <link rel="stylesheet" href="../static/lib/prism/prism.css">
+    <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css">
     <link rel="stylesheet" href="../static/css/me.css">
     <title>详情页面</title>
 </head>
@@ -58,16 +59,17 @@
                 <img src="https://picsum.photos/id/1003/800/450" alt="" class="ui fluid rounded image">
             </div>
             <!--content-->
-            <div class="ui padded attached segment">
+            <div class="ui attached segment">
                 <div class="ui right aligned basic segment">
                     <div class="ui orange basic label">
                         原创
                     </div>
                 </div>
 
-                <h2 class="ui center aligned header">标题</h2>
+                <h2 id="header" class="ui center aligned header">标题</h2>
 
-                <div id="content" class="typo typo-selection m-padded-lr-responsive m-padded-tb-large">
+                <div id="content" class="typo  js-toc-content padded typo-selection m-padded-lr-responsive m-padded-tb-large">
+                    <h3 id="section1">你好</h3>
                     <p>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         首先肯定是前端搭建，多亏了我俩个前端大佬，帮助我解决了诸多小儿科问题。
@@ -123,7 +125,7 @@
             </div>
 
             <!--comment-->
-            <div class="ui bottom attached segment">
+            <div class="ui bottom attached segment" id="comment-container">
                 <div class="ui teal segment">
                     <div class="ui comments">
                         <h3 class="ui dividing header">Comments</h3>
@@ -221,6 +223,28 @@
         </div>
     </div>
 
+
+    <div class="m-padded m-fixed m-right-bottom">
+        <div class="ui vertical icon buttons">
+            <button type="button" class="ui toc teal button">目录</button>
+            <a type="button" href="#comment-container" class="ui teal button">留言</a>
+            <button id="myQR" class="ui icon button"><i class="weixin icon"></i></button>
+            <a href="#" class="ui icon button"><i class="chevron up icon"></i></a>
+        </div>
+    </div>
+
+    <div class="ui toc-container flowing popup transition hidden" style="width: 250px !important;">
+        <ol class="js-toc">
+        </ol>
+    </div>
+
+    <div class="ui myQR flowing popup transition hidden center aligned">
+        <div class="ui image" style="width: 110px !important;">
+            <img src="../static/images/1.jpg" alt="" class="ui rounded image">
+        </div>
+    </div>
+
+
     <!--底部footer-->
     <footer class="ui inverted vertical segment m-padded-tb-massive">
         <div class="ui center aligned container">
@@ -264,10 +288,11 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     <script src="../static/lib/prism/prism.js"></script>
+    <script src="../static/lib/tocbot/tocbot.min.js"></script>
 <script>
-    $('menu.toggle').click(function () {
+    $('.menu.toggle').click(function () {
         $(".m-item").toggleClass('m-mobile-hide');
-    })
+    });
 
     $('#payButton').popup(
         {
@@ -275,7 +300,33 @@
             on: 'click',
             position:'bottom center'
         }
-    )
+    );
+
+    $('.toc.button').popup(
+        {
+            popup:$('.toc-container.popup'),
+            on: 'click',
+            position:'left center'
+        }
+    );
+    tocbot.init({
+        // Where to render the table of contents.
+        tocSelector: '.js-toc',
+        // Where to grab the headings to build the table of contents.对应内容元素
+        contentSelector: '.js-toc-content',
+        // Which headings to grab inside of the contentSelector element.对应三级目录
+        headingSelector: 'h1, h2, h3',
+        // For headings inside relative or absolute positioned containers within content.
+        hasInnerContainers: true
+    });
+
+    $('#myQR').popup(
+        {
+            popup:$('.myQR.popup'),
+            on: 'click',
+            position:'left center'
+        }
+    );
 </script>
 </body>
 </html>

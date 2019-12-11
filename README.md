@@ -14,6 +14,7 @@
 * 内容排版 [typo.css](https://typo.sofi.sh/)
 * 动画 [animate.css](https://daneden.github.io/animate.css/)
 * 代码高亮 [prism](https://prismjs.com/)
+* 目录生成 [Tocbot]()
 * 滚动侦测 [waypoints]()
 * 平滑滚动 [jquery.scollTo]()
 * 目录生成 [Tocbot]()
