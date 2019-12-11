@@ -15,7 +15,7 @@
 * 动画 [animate.css](https://daneden.github.io/animate.css/)
 * 代码高亮 [prism](https://prismjs.com/)
 * 目录生成 [Tocbot](http://tscanlin.github.io/tocbot/)
-* 滚动侦测 [waypoints]()
+* 滚动侦测 [waypoints](http://imakewebthings.com/waypoints/)
 * 平滑滚动 [jquery.scollTo](https://github.com/flesler/jquery.scrollTo)
 * 二维码生成 [qrcode.js](https://davidshimjs.github.io/qrcodejs/)
 
