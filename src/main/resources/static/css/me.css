@@ -154,7 +154,7 @@ body{
 }
 
 .m-right-bottom{
-    bottom: 0!important;
+    bottom: 0 !important;
     right: 0 !important;
 }
 
