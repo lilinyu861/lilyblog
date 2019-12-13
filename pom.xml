@@ -64,6 +64,12 @@
 			<artifactId>spring-boot-starter-aop</artifactId>
 		</dependency>
 
+		<!--aspect-->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+		</dependency>
+
 		<!--mysql-->
 		<dependency>
 			<groupId>mysql</groupId>

@@ -20,4 +20,15 @@
 * 二维码生成 [qrcode.js](https://davidshimjs.github.io/qrcodejs/)
 
 
+### 后端开发
+1. 记录日志内容：
+    * 请求url
+    * 访问者ip
+    * 调用方法classMethod
+    * 参数 args
+    * 返回内容
+    
+2. 记录日志类：
+    * @Aspect
+    * @Component
 
