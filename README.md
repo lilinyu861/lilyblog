@@ -10,6 +10,7 @@
 5. Thymeleaf
 
 ### 前端插件集成
+###### 前端框架使用 semanticUI的CDN链接
 * 编辑器 [Markdown](https://pandao.github.io/editor.md/) 
 * 内容排版 [typo.css](https://typo.sofi.sh/)
 * 动画 [animate.css](https://daneden.github.io/animate.css/)
@@ -31,4 +32,13 @@
 2. 记录日志类：
     * @Aspect
     * @Component
+
+3. 接口文档swagger配置
+
+4. 实体设计
+    * 博客 Blog
+    * 博客分类 Type
+    * 博客标签 Tag
+    * 博客评论 Comment
+    * 用户 User
 
