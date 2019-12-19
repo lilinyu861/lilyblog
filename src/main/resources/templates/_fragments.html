@@ -13,16 +13,18 @@
     <link rel="stylesheet" href="../static/css/me.css" th:href="@{../static/css/me.css}">
 </head>
 <body>
+
+
 <!--导航-->
 <nav th:fragment="menu(n)" class="ui inverted attached segment m-padded-tb-mini">
     <div class="ui container">
-        <div class="ui inverted secondary menu stackable">
+        <div class="ui inverted secondary menu icon stackable">
             <h2 class="ui header teal item">Lily's Blog</h2>
-            <a href="#" class="m-item item m-mobile-hide" th:classappend="${n==1} ? 'active'"><i class="mini home icon"></i>首页</a>
-            <a href="#" class="m-item item m-mobile-hide" th:classappend="${n==2} ? 'active'"><i class="mini idea icon"></i>分类</a>
-            <a href="#" class="m-item item m-mobile-hide" th:classappend="${n==3} ? 'active'"><i class="mini tags icon"></i>标签</a>
-            <a href="#" class="m-item item m-mobile-hide" th:classappend="${n==4} ? 'active'"><i class="mini clone icon"></i>归档</a>
-            <a href="#" class="m-item item m-mobile-hide" th:classappend="${n==5} ? 'active'"><i class="mini info icon"></i>关于我</a>
+            <a href="@{/}" class="m-item item m-mobile-hide" th:classappend="${n==1} ? 'active'"><i class="mini home icon"></i>首页</a>
+            <a href="@{/types/-1}" class="m-item item m-mobile-hide" th:classappend="${n==2} ? 'active'"><i class="mini idea icon"></i>分类</a>
+            <a href="@{/tags/-1}" class="m-item item m-mobile-hide" th:classappend="${n==3} ? 'active'"><i class="mini tags icon"></i>标签</a>
+            <a href="@{/archives}" class="m-item item m-mobile-hide" th:classappend="${n==4} ? 'active'"><i class="mini clone icon"></i>归档</a>
+            <a href="@{/about}" class="m-item item m-mobile-hide" th:classappend="${n==5} ? 'active'"><i class="mini info icon"></i>关于我</a>
             <div class="right m-item item m-mobile-hide">
                 <div class="ui icon inverted m-opacity-max input">
                     <input type="text" placeholder="search...">
@@ -49,7 +51,7 @@
                 </div>
             </div>
             <div class="eight wide column">
-                <h4 class="ui inverted header">最新blog</h4>
+                <h4 class="ui inverted header">最新博客</h4>
                 <div class="ui inverted link list m-opacity-mini">
                     <a href="#" class="item">用户故事(user story)</a>
                     <a href="#" class="item">生命在于折腾</a>
@@ -69,5 +71,15 @@
         <p class="m-opacity-mini">Copyright@2019-2020 lily Designed by lily</p>
     </div>
 </footer>
+
+<th:block th:fragment="script">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+    <script src="../static/lib/prism/prism.js" th:src="@{../static/lib/prism/prism.js}"></script>
+    <script src="../static/lib/tocbot/tocbot.min.js" th:src="@{../static/lib/tocbot/tocbot.min.js}"></script>
+    <script src="../static/lib/qrcode/qrcode.min.js" th:src="@{../static/lib/qrcode.min.js}"></script>
+    <script src="../static/lib/waypoints/jquery.waypoints.min.js" th:src="@{../static/lib/waypoints/jquery.waypoints.min.js}"></script>
+</th:block>
 </body>
 </html>

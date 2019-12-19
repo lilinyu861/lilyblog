@@ -333,9 +333,10 @@
             <p class="m-opacity-mini">Copyright@2019-2020 lily Designed by lily</p>
         </div>
     </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<th:block th:replace="_fragments :: script">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</th:block>
 <script>
     $('.menu.toggle').click(function () {
         $(".m-item").toggleClass('m-mobile-hide');

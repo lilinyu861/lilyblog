@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="_fragments :: head(~{::title})">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
@@ -13,11 +13,11 @@
 </head>
 <body>
     <!--导航-->
-    <nav class="ui inverted attached segment m-padded-tb-mini">
+    <nav th:replace="_fragments :: menu(1)" class="ui inverted attached segment m-padded-tb-mini">
         <div class="ui container">
             <div class="ui inverted secondary menu stackable">
                 <h2 class="ui header teal item">Lily's Blog</h2>
-                <a href="#" class="m-item item m-mobile-hide"><i class="mini home icon"></i>首页</a>
+                <a href="#" class="active m-item item m-mobile-hide"><i class="mini home icon"></i>首页</a>
                 <a href="#" class="m-item item m-mobile-hide"><i class="mini idea icon"></i>分类</a>
                 <a href="#" class="m-item item m-mobile-hide"><i class="mini tags icon"></i>标签</a>
                 <a href="#" class="m-item item m-mobile-hide"><i class="mini clone icon"></i>归档</a>
@@ -284,7 +284,7 @@
             <p class="m-opacity-mini">Copyright@2019-2020 lily Designed by lily</p>
         </div>
     </footer>
-
+<th:block th:replace="_fragments :: script">
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
@@ -293,8 +293,8 @@
     <script src="../static/lib/tocbot/tocbot.min.js"></script>
     <script src="../static/lib/qrcode/qrcode.min.js"></script>
     <script src="../static/lib/waypoints/jquery.waypoints.min.js"></script>
+</th:block>
 <script>
-
     $('.menu.toggle').click(function () {
         $(".m-item").toggleClass('m-mobile-hide');
     });
